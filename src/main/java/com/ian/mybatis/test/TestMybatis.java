@@ -19,7 +19,8 @@ public class TestMybatis {
 //            roleMapper.insertRole(role);
             List<Role> roles = roleMapper.getRoles();
             System.out.println(roles);
-            sqlSession.commit();
+//            roleMapper.deleteRole(1L);
+            sqlSession.commit();   // default the autocommit is set to false
         } catch (Exception ex){
             System.out.println(ex.getMessage());
             sqlSession.rollback();
