@@ -29,4 +29,9 @@ public class Role {
     public void setNote(String note) {
         this.note = note;
     }
+
+    @Override
+    public String toString(){
+        return "id: " + id + " roleName: " + roleName + " note: " + note;
+    }
 }
