@@ -1,10 +1,13 @@
 package com.ian.mybatis.po;
 
+import java.util.Date;
+
 public class Role {
 
     private Long id;
     private String roleName;
     private String note;
+    private Date createDate;
 
     public Long getId() {
         return id;
@@ -28,6 +31,14 @@ public class Role {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     @Override
