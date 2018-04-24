@@ -8,10 +8,10 @@
         <typeAlias alias="role" type="com.ian.mybatis.po.Role"/>
     </typeAliases>
     <plugins>
-        <plugin interceptor="com.ian.mybatis.plugin.MyPlugin">
+        <plugin interceptor="com.ian.plugin.MyPlugin">
             <property name="dbType" value="mysql"/>
         </plugin>
-        <plugin interceptor="com.ian.mybatis.plugin.QueryLimitPlugin">
+        <plugin interceptor="com.ian.plugin.QueryLimitPlugin">
             <property name="dbtype" value="mysql"/>
             <property name="limit" value="50"/>
         </plugin>
@@ -28,6 +28,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/ian/mybatis/mapper/po/roleMapper.xml"/>
+        <mapper resource="com/ian/mapper/po/roleMapper.xml"/>
     </mappers>
 </configuration>

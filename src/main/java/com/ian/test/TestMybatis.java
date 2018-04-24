@@ -1,6 +1,6 @@
-package com.ian.mybatis.test;
+package com.ian.test;
 
-import com.ian.mybatis.mapper.RoleMapper;
+import com.ian.mapper.RoleMapper;
 import com.ian.mybatis.po.Role;
 import org.apache.ibatis.session.SqlSession;
 

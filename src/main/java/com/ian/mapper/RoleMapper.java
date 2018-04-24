@@ -1,4 +1,4 @@
-package com.ian.mybatis.mapper;
+package com.ian.mapper;
 
 import com.ian.mybatis.po.Role;
 

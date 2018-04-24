@@ -1,4 +1,4 @@
-package com.ian.mybatis.plugin;
+package com.ian.plugin;
 
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;

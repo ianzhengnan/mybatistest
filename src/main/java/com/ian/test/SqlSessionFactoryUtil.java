@@ -1,4 +1,4 @@
-package com.ian.mybatis.test;
+package com.ian.test;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
