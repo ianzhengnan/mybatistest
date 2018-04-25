@@ -104,6 +104,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <!-- Copy xml file to target folder -->
     <build>
         <resources>
             <resource>

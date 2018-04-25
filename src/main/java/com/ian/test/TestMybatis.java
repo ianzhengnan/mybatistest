@@ -4,12 +4,16 @@ import com.ian.mapper.RoleMapper;
 import com.ian.mybatis.po.Role;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TestMybatis {
 
     public static void main(String[] args) {
         SqlSession sqlSession = null;
+        Map<String, Role> rolesMap = new HashMap<String, Role>();
+
         try {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
