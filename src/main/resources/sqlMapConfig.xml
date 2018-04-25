@@ -6,7 +6,7 @@
 <configuration>
 
     <settings>
-        <setting name="cachedEnabled" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
         <setting name="useGeneratedKeys" value="true"/>
         <setting name="defaultExecutorType" value="REUSE"/>
         <setting name="lazyLoadingEnabled" value="true"/>
