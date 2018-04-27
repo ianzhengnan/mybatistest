@@ -11,10 +11,10 @@
         <plugin interceptor="com.ian.plugin.MyPlugin">
             <property name="dbType" value="mysql"/>
         </plugin>
-        <plugin interceptor="com.ian.plugin.QueryLimitPlugin">
+        <!--<plugin interceptor="com.ian.plugin.QueryLimitPlugin">
             <property name="dbtype" value="mysql"/>
             <property name="limit" value="50"/>
-        </plugin>
+        </plugin>-->
     </plugins>
     <environments default="development">
         <environment id="development">
@@ -29,5 +29,6 @@
     </environments>
     <mappers>
         <mapper resource="com/ian/mapper/po/roleMapper.xml"/>
+        <mapper resource="com/ian/mybatis/dao/student.xml" />
     </mappers>
 </configuration>
