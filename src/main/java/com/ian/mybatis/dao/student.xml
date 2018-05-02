@@ -13,10 +13,27 @@
         <association property="selfCard" column="id"
                      select="com.ian.mybatis.dao.StudentSelfCardDao.findStudentSelfcardByStudentId" />
         <collection property="studentLectures" column="id"
-                    select="com.ian.mybatis.dao.StudentLectureDao.findStudentLectureByStuId"/>
-
+                    select="com.ian.mybatis.dao.StudentLectureDao.findStudentLectureByStuId" fetchType="eager"/>
+        <discriminator javaType="int" column="sex">
+            <case value="1" resultMap="maleStudentMap"></case>
+            <case value="2" resultMap="femaleStudentMap"></case>
+        </discriminator>
+    </resultMap>
+    <resultMap id="maleStudentMap" type="com.ian.mybatis.po.MaleStudent" extends="studentMap">
+        <collection property="studentHealthMales" column="id"
+                    select="com.ian.mybatis.dao.StudentHealthDao.findStudentHealthMaleByStuId" />
+    </resultMap>
+    <resultMap id="femaleStudentMap" type="com.ian.mybatis.po.FemaleStudent" extends="studentMap">
+        <collection property="studentHealthFemales" column="id"
+                    select="com.ian.mybatis.dao.StudentHealthDao.findStudentHealthFemaleByStuId" />
     </resultMap>
     <select id="getStudent" parameterType="int" resultMap="studentMap">
+        select id, student_name, sex, note from t_student where id = #{id}
+    </select>
+    <select id="getMaleStudent" parameterType="int" resultMap="maleStudentMap">
+        select id, student_name, sex, note from t_student where id = #{id}
+    </select>
+    <select id="getFemaleStudent" parameterType="int" resultMap="femaleStudentMap">
         select id, student_name, sex, note from t_student where id = #{id}
     </select>
     <insert id="insertStudent" parameterType="com.ian.mybatis.po.Student">

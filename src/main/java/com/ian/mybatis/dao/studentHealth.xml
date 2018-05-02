@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ian.mybatis.dao.StudentHealthDao">
+    <resultMap id="studentHealthMap" type="com.ian.mybatis.po.StudentHealth">
+        <id column="id" property="id" javaType="int" jdbcType="BIGINT"/>
+        <result column="student_id" property="studentId"/>
+        <result column="check_date" property="checkDate"/>
+        <result column="heart" property="heart"/>
+        <result column="liver" property="liver"/>
+        <result column="spleen" property="spleen"/>
+        <result column="lung" property="lung"/>
+        <result column="kidney" property="kidney"/>
+        <result column="note" property="note"/>
+    </resultMap>
+    <resultMap id="maleStudentHealthMap" type="com.ian.mybatis.po.StudentHealthMale"
+               extends="studentHealthMap">
+        <result column="prostate" property="prostate"/>
+    </resultMap>
+    <resultMap id="femaleStudentHealthMap" type="com.ian.mybatis.po.StudentHealthFemale"
+               extends="studentHealthMap">
+        <result column="uterus" property="uterus"/>
+    </resultMap>
+
+    <select id="findStudentHealthMaleByStuId" resultMap="maleStudentHealthMap" parameterType="int" >
+        select * from t_student_health_male where student_id = #{id}
+    </select>
+    <select id="findStudentHealthFemaleByStuId" resultMap="femaleStudentHealthMap" parameterType="int">
+        select * from t_student_health_female where student_id = #{id}
+    </select>
+</mapper>

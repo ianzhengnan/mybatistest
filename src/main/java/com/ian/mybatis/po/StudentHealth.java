@@ -12,6 +12,7 @@ public class StudentHealth {
     protected String spleen;
     protected String lung;
     protected String kidney;
+    protected String note;
 
     public int getId() {
         return id;
@@ -75,5 +76,13 @@ public class StudentHealth {
 
     public void setKidney(String kidney) {
         this.kidney = kidney;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

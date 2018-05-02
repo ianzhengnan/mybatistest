@@ -4,6 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
     <typeAliases>
         <typeAlias alias="role" type="com.ian.mybatis.po.Role"/>
         <typeAlias type="com.ian.mybatis.po.Lecture" alias="lecture"/>
@@ -34,5 +39,6 @@
         <mapper resource="com/ian/mybatis/dao/studentselfcard.xml"/>
         <mapper resource="com/ian/mybatis/dao/studentlecture.xml"/>
         <mapper resource="com/ian/mybatis/dao/lecture.xml"/>
+        <mapper resource="com/ian/mybatis/dao/studentHealth.xml"/>
     </mappers>
 </configuration>

@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Student {
 
-    private int id;
-    private String name;
-    private Sex sex;
-    private StudentSelfcard selfCard;
-    private List<StudentLecture> studentLectures;
-    private String note;
+    protected int id;
+    protected String name;
+    protected Sex sex;
+    protected StudentSelfcard selfCard;
+    protected List<StudentLecture> studentLectures;
+    protected String note;
 
     public int getId() {
         return id;
