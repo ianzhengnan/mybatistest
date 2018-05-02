@@ -6,6 +6,7 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="role" type="com.ian.mybatis.po.Role"/>
+        <typeAlias type="com.ian.mybatis.po.Lecture" alias="lecture"/>
     </typeAliases>
     <plugins>
         <plugin interceptor="com.ian.plugin.MyPlugin">
@@ -30,5 +31,8 @@
     <mappers>
         <mapper resource="com/ian/mapper/po/roleMapper.xml"/>
         <mapper resource="com/ian/mybatis/dao/student.xml" />
+        <mapper resource="com/ian/mybatis/dao/studentselfcard.xml"/>
+        <mapper resource="com/ian/mybatis/dao/studentlecture.xml"/>
+        <mapper resource="com/ian/mybatis/dao/lecture.xml"/>
     </mappers>
 </configuration>

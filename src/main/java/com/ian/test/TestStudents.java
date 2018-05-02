@@ -17,13 +17,13 @@ public class TestStudents {
         try{
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
             StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
-            Student student = new Student();
-            student.setName("战三");
-            student.setSelfCardno(1234567);
-            student.setSex(Sex.MALE);
-            student.setNote("Test EnumOrdinalTypeHandler");
-            studentDao.insertStudent(student);
-            Student student1 = studentDao.getStudent(3);
+//            Student student = new Student();
+//            student.setName("战三");
+//            student.setSelfCardno(1234567);
+//            student.setSex(Sex.MALE);
+//            student.setNote("Test EnumOrdinalTypeHandler");
+//            studentDao.insertStudent(student);
+            Student student1 = studentDao.getStudent(1);
             System.out.println(student1.getSex());
             sqlSession.commit();
         }catch (Exception ex){

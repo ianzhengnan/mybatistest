@@ -1,11 +1,14 @@
 package com.ian.mybatis.po;
 
+import java.util.List;
+
 public class Student {
 
     private int id;
     private String name;
     private Sex sex;
-    private int selfCardNo;
+    private StudentSelfcard selfCard;
+    private List<StudentLecture> studentLectures;
     private String note;
 
     public int getId() {
@@ -32,19 +35,27 @@ public class Student {
         this.sex = sex;
     }
 
-    public int getSelfCardno() {
-        return selfCardNo;
-    }
-
-    public void setSelfCardno(int selfCardno) {
-        this.selfCardNo = selfCardno;
-    }
-
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public StudentSelfcard getSelfCard() {
+        return selfCard;
+    }
+
+    public void setSelfCard(StudentSelfcard selfCard) {
+        this.selfCard = selfCard;
+    }
+
+    public List<StudentLecture> getStudentLectures() {
+        return studentLectures;
+    }
+
+    public void setStudentLectures(List<StudentLecture> studentLectures) {
+        this.studentLectures = studentLectures;
     }
 }

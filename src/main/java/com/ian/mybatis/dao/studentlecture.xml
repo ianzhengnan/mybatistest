@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ian.mybatis.dao.StudentLectureDao">
+    <resultMap id="studentLectureMap" type="com.ian.mybatis.po.StudentLecture">
+        <id column="id" property="id" javaType="int" jdbcType="BIGINT"/>
+        <result column="student_id" property="studentId"/>
+        <result column="grade" property="grade"/>
+        <result column="note" property="note"/>
+        <association property="lecture" column="lecture_id" select="com.ian.mybatis.dao.LectureDao.getLecture"/>
+    </resultMap>
+    <select id="findStudentLectureByStuId" resultMap="studentLectureMap" parameterType="int">
+        select id, student_id, lecture_id, grade, note from t_student_lecture
+          where student_id = #{id}
+    </select>
+</mapper>

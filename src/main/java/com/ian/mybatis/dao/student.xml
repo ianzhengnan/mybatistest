@@ -8,16 +8,21 @@
         <id column="id" property="id" javaType="int" jdbcType="BIGINT"/>
         <result column="student_name" property="name" />
         <result column="sex" property="sex" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
-        <result column="selfcard_no" property="selfCardNo" />
         <result column="note" property="note"/>
+        <!-- must to split it with results -->
+        <association property="selfCard" column="id"
+                     select="com.ian.mybatis.dao.StudentSelfCardDao.findStudentSelfcardByStudentId" />
+        <collection property="studentLectures" column="id"
+                    select="com.ian.mybatis.dao.StudentLectureDao.findStudentLectureByStuId"/>
+
     </resultMap>
     <select id="getStudent" parameterType="int" resultMap="studentMap">
-        select id, student_name, sex, selfcard_no, note from t_student where id = #{id}
+        select id, student_name, sex, note from t_student where id = #{id}
     </select>
     <insert id="insertStudent" parameterType="com.ian.mybatis.po.Student">
-        insert into t_student(student_name, sex, selfcard_no, note) VALUES (#{name},
+        insert into t_student(student_name, sex, note) VALUES (#{name},
           #{sex, typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
-          #{selfCardNo}, #{note}
+          #{note}
         )
     </insert>
 </mapper>
