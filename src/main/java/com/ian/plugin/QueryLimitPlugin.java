@@ -9,9 +9,9 @@ import java.sql.Connection;
 import java.util.Properties;
 
 @Intercepts({@Signature(
-        type = StatementHandler.class,
-        method = "prepare",
-        args = { Connection.class }
+        type = StatementHandler.class,  // 需要植入plugin的类
+        method = "prepare", // 需要替代的方法
+        args = { Connection.class } // 方法对应的参数
 )})
 public class QueryLimitPlugin implements Interceptor {
 

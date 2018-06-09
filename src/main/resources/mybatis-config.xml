@@ -14,13 +14,13 @@
         <typeAlias type="com.ian.mybatis.po.Lecture" alias="lecture"/>
     </typeAliases>
     <plugins>
-        <plugin interceptor="com.ian.plugin.MyPlugin">
+        <!-- <plugin interceptor="com.ian.plugin.MyPlugin">
             <property name="dbType" value="mysql"/>
-        </plugin>
-        <!--<plugin interceptor="com.ian.plugin.QueryLimitPlugin">
+        </plugin> -->
+        <plugin interceptor="com.ian.plugin.QueryLimitPlugin">
             <property name="dbtype" value="mysql"/>
             <property name="limit" value="50"/>
-        </plugin>-->
+        </plugin>
     </plugins>
     <environments default="development">
         <environment id="development">

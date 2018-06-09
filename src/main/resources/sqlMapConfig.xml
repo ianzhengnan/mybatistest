@@ -17,7 +17,14 @@
         <typeAlias type="com.ian.mybatis.po.Role" alias="role"/>
         <typeAlias type="com.ian.mybatis.po.User" alias="user"/>
     </typeAliases>
-
+	
+	<plugins>
+		<plugin interceptor="com.ian.plugin.QueryLimitPlugin">
+			<property name="dbtype" value="mysql"/>
+            <property name="limit" value="50"/>
+		</plugin>
+	</plugins>
+	
     <mappers>
         <mapper resource="com\ian\mybatis\dao\role.xml"/>
         <mapper resource="com\ian\mybatis\dao\user.xml"/>
